@@ -10,24 +10,24 @@ package parcial;
  */
 public class Main {
     public static void main(String[] args) {
-        Biblioteca biblioteca = new Biblioteca();
+        Zoo zoo = new Zoo();
 
         try {
-            // Agregar algunas publicaciones
-            biblioteca.agregarPublicacion(new Libro("Don Quijote", 1605, "Miguel de Cervantes", Genero.FICCION));
-            biblioteca.agregarPublicacion(new Revista("National Geographic", 2023, 5));
-            biblioteca.agregarPublicacion(new Ilustracion("Mona Lisa", 1503, "Leonardo da Vinci", 77, 53));
+            // Agregar algunos animales
+            zoo.agregarAnimal(new Mamifero("Elefante", 10, 500.0, Dieta.HERBIVORO));
+            zoo.agregarAnimal(new Ave("Águila", 5, 3.5, Dieta.CARNIVORO, 2.1));
+            zoo.agregarAnimal(new Reptil("Cocodrilo", 12, 200.0, Dieta.CARNIVORO, "Escamas gruesas", "Ectotermia"));
 
-            // Intentar agregar un libro duplicado
-            biblioteca.agregarPublicacion(new Libro("Don Quijote", 1605, "Miguel de Cervantes", Genero.FICCION));
-        } catch (PublicacionDuplicadaException e) {
+            // Intentar agregar un animal duplicado
+            zoo.agregarAnimal(new Mamifero("Elefante", 10, 500.0, Dieta.HERBIVORO));
+        } catch (AnimalDuplicadoException e) {
             System.out.println(e.getMessage());
         }
 
-        // Mostrar todas las publicaciones
-        biblioteca.mostrarPublicaciones();
+        // Mostrar todos los animales
+        zoo.mostrarAnimales();
 
-        // Leer todas las publicaciones
-        biblioteca.leerPublicaciones();
+        // Vacunar animales
+        zoo.vacunarAnimales();
     }
 }
