@@ -1,0 +1,2 @@
+parcial.Publicacion
+parcial.Genero
